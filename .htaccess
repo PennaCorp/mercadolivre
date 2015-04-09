@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^login\/[a-zA-Z0-9]{32}\/? loginml.php?cliente=$1 [NC,L]
