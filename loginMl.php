@@ -27,8 +27,11 @@
 						and db.db_id=ml.db_id
 						and ml.hash_cliente='".CLI_HASH."'";
 	$result = mysqli_query($con, $query) or die(mysqli_error($con));
+	if (mysqli_num_rows($result) == 0){
+		die("Ocorreu um erro ao identificar o banco de dados da empresa.");
+	}
 	$rowMl = mysqli_fetch_array($result);
-	if (($rowMl['user_id'] == null) || (isset($_GET['reloga']))){
+	if (($rowMl['user_id'] == null) || (isset($_GET['reloga'])) || (isset($_GET['code']))){
 		if (isset($_GET['code'])){
 			$user = $meli->authorize($_GET['code'], CLI_LINK);
 			$parametros = $user["body"];
@@ -58,6 +61,17 @@
 									refresh_token='".$resultadoMl->refresh_token."',
 									expiration_time='".$resultadoMl->expires_in."'
 								where hash_cliente='".CLI_HASH."'";
+			mysqli_query($con, $query) or die(mysqli_error($con));
+			$query = "update mercadolivre set
+									user_id=null,
+									access_token=null,
+									refresh_token=null,
+									expiration_time=null
+								where user_id='".$resultadoMl->user_id."'
+								and hash_cliente in (select hash_cliente from mercadolivre
+														where
+														user_id='".$resultadoMl->user_id."'
+														and hash_cliente <> '".CLI_HASH."')";
 			mysqli_query($con, $query) or die(mysqli_error($con));
 			echo "OK!";
 		}else{
