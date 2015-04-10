@@ -55,24 +55,35 @@
 				die("Ocorreu um erro na autenticação com o mercado livre. Erro: ".$resultadoMl->message);
 			}
 			$resultadoMl->expires_in += time();
+			mysqli_query($con, "START TRANSACTION");
 			$query = "update mercadolivre set
 									user_id='".$resultadoMl->user_id."',
 									access_token='".$resultadoMl->access_token."',
 									refresh_token='".$resultadoMl->refresh_token."',
 									expiration_time='".$resultadoMl->expires_in."'
 								where hash_cliente='".CLI_HASH."'";
-			mysqli_query($con, $query) or die(mysqli_error($con));
-			$query = "update mercadolivre set
-									user_id=null,
-									access_token=null,
-									refresh_token=null,
-									expiration_time=null
-								where user_id='".$resultadoMl->user_id."'
-								and hash_cliente in (select hash_cliente from mercadolivre
-														where
-														user_id='".$resultadoMl->user_id."'
-														and hash_cliente <> '".CLI_HASH."')";
-			mysqli_query($con, $query) or die(mysqli_error($con));
+			mysqli_query($con, $query) or die(mysqli_query($con, "ROLLBACK"));
+			$queryHash = "select hash_cliente from mercadolivre
+									where
+									user_id='".$resultadoMl->user_id."'
+									and hash_cliente <> ('".CLI_HASH."')";
+			$resultHash = mysqli_query($con, $queryHash) or die(mysqli_error($con));
+			if (mysqli_num_rows($resultHash) > 0){
+				$hashes = "";
+				while ($rowHash = mysqli_fetch_array($resultHash)){
+					$hashes .= ",'".$rowHash['hash_cliente']."'";
+				}
+				$hashes = substr($hashes, 1);
+				$query = "update mercadolivre set
+										user_id=null,
+										access_token=null,
+										refresh_token=null,
+										expiration_time=null
+									where user_id='".$resultadoMl->user_id."'
+									and hash_cliente in (".$hashes.")";
+				mysqli_query($con, $query) or die(mysqli_query($con, "ROLLBACK"));
+			}
+			mysqli_query($con, "COMMIT");
 			echo "OK!";
 		}else{
 			die(header("Location: " . $meli->getAuthUrl(CLI_LINK)));

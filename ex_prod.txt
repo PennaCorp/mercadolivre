@@ -1,0 +1,216 @@
+array(2) {
+  ["body"]=>
+  object(stdClass)#6 (4) {
+    ["message"]=>
+    string(54) "Item without price is not allowed for category MLB3530"
+    ["error"]=>
+    string(18) "item.price.invalid"
+    ["status"]=>
+    int(400)
+    ["cause"]=>
+    array(0) {
+    }
+  }
+  ["httpCode"]=>
+  int(400)
+}
+
+
+array(2) {
+  ["body"]=>
+  object(stdClass)#6 (49) {
+    ["id"]=>
+    string(12) "MLB646187502"
+    ["site_id"]=>
+    string(3) "MLB"
+    ["title"]=>
+    string(45) "Transm Angular 1:1,0714 P/o370/371/1118 Todos"
+    ["subtitle"]=>
+    NULL
+    ["seller_id"]=>
+    int(179566947)
+    ["category_id"]=>
+    string(7) "MLB3530"
+    ["official_store_id"]=>
+    NULL
+    ["price"]=>
+    float(46.17)
+    ["base_price"]=>
+    float(46.17)
+    ["original_price"]=>
+    NULL
+    ["currency_id"]=>
+    string(3) "BRL"
+    ["initial_quantity"]=>
+    int(1)
+    ["available_quantity"]=>
+    int(1)
+    ["sold_quantity"]=>
+    int(0)
+    ["buying_mode"]=>
+    string(10) "buy_it_now"
+    ["listing_type_id"]=>
+    string(4) "free"
+    ["start_time"]=>
+    string(24) "2015-04-10T19:53:58.867Z"
+    ["stop_time"]=>
+    string(24) "2015-06-09T19:53:58.867Z"
+    ["end_time"]=>
+    string(24) "2015-06-09T19:53:58.867Z"
+    ["condition"]=>
+    string(3) "new"
+    ["permalink"]=>
+    string(93) "http://produto.mercadolivre.com.br/MLB-646187502-transm-angular-110714-po3703711118-todos-_JM"
+    ["thumbnail"]=>
+    string(0) ""
+    ["secure_thumbnail"]=>
+    string(0) ""
+    ["pictures"]=>
+    array(0) {
+    }
+    ["video_id"]=>
+    NULL
+    ["descriptions"]=>
+    array(1) {
+      [0]=>
+      object(stdClass)#7 (1) {
+        ["id"]=>
+        string(22) "MLB646187502-798298924"
+      }
+    }
+    ["accepts_mercadopago"]=>
+    bool(true)
+    ["non_mercado_pago_payment_methods"]=>
+    array(0) {
+    }
+    ["shipping"]=>
+    object(stdClass)#8 (6) {
+      ["mode"]=>
+      string(13) "not_specified"
+      ["local_pick_up"]=>
+      bool(false)
+      ["free_shipping"]=>
+      bool(false)
+      ["methods"]=>
+      array(0) {
+      }
+      ["dimensions"]=>
+      NULL
+      ["tags"]=>
+      array(0) {
+      }
+    }
+    ["seller_address"]=>
+    object(stdClass)#9 (10) {
+      ["id"]=>
+      int(160149678)
+      ["comment"]=>
+      string(0) ""
+      ["address_line"]=>
+      string(15) "Santo Hélio 41"
+      ["zip_code"]=>
+      string(8) "09090330"
+      ["city"]=>
+      object(stdClass)#10 (2) {
+        ["id"]=>
+        string(8) "BR-SP-38"
+        ["name"]=>
+        string(12) "Santo André"
+      }
+      ["state"]=>
+      object(stdClass)#11 (2) {
+        ["id"]=>
+        string(5) "BR-SP"
+        ["name"]=>
+        string(10) "São Paulo"
+      }
+      ["country"]=>
+      object(stdClass)#12 (2) {
+        ["id"]=>
+        string(2) "BR"
+        ["name"]=>
+        string(6) "Brasil"
+      }
+      ["latitude"]=>
+      float(-23.679819)
+      ["longitude"]=>
+      float(-46.5230671)
+      ["search_location"]=>
+      object(stdClass)#13 (3) {
+        ["neighborhood"]=>
+        object(stdClass)#14 (2) {
+          ["id"]=>
+          string(15) "TUxCQlZJTDc5NjA"
+          ["name"]=>
+          string(11) "Vila Alpina"
+        }
+        ["city"]=>
+        object(stdClass)#15 (2) {
+          ["id"]=>
+          string(15) "TUxCQ1NQLTE2NDE"
+          ["name"]=>
+          string(12) "Santo André"
+        }
+        ["state"]=>
+        object(stdClass)#16 (2) {
+          ["id"]=>
+          string(16) "TUxCUFNBT085N2E4"
+          ["name"]=>
+          string(10) "São Paulo"
+        }
+      }
+    }
+    ["seller_contact"]=>
+    NULL
+    ["location"]=>
+    object(stdClass)#17 (0) {
+    }
+    ["geolocation"]=>
+    object(stdClass)#18 (2) {
+      ["latitude"]=>
+      float(-23.679819)
+      ["longitude"]=>
+      float(-46.5230671)
+    }
+    ["coverage_areas"]=>
+    array(0) {
+    }
+    ["attributes"]=>
+    array(0) {
+    }
+    ["listing_source"]=>
+    string(0) ""
+    ["variations"]=>
+    array(0) {
+    }
+    ["status"]=>
+    string(14) "not_yet_active"
+    ["sub_status"]=>
+    array(0) {
+    }
+    ["tags"]=>
+    array(0) {
+    }
+    ["warranty"]=>
+    string(7) "3 meses"
+    ["catalog_product_id"]=>
+    NULL
+    ["seller_custom_field"]=>
+    NULL
+    ["parent_item_id"]=>
+    NULL
+    ["differential_pricing"]=>
+    NULL
+    ["deal_ids"]=>
+    array(0) {
+    }
+    ["automatic_relist"]=>
+    bool(false)
+    ["date_created"]=>
+    string(24) "2015-04-10T19:53:58.988Z"
+    ["last_updated"]=>
+    string(24) "2015-04-10T19:53:58.988Z"
+  }
+  ["httpCode"]=>
+  int(201)
+}
